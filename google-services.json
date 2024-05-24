@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "668879051462",
+    "firebase_url": "https://watchtry-abd2f-default-rtdb.firebaseio.com",
+    "project_id": "watchtry-abd2f",
+    "storage_bucket": "watchtry-abd2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668879051462:android:bc70259e04e366d51015c7",
+        "android_client_info": {
+          "package_name": "com.WatchTry.WatchTry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBqq4erojnYYsevOOu3wyLOGKIpiN_3BA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668879051462:android:3dc10dabc449f2a61015c7",
+        "android_client_info": {
+          "package_name": "com.example.watch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBqq4erojnYYsevOOu3wyLOGKIpiN_3BA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668879051462:android:d4a1497936869bb01015c7",
+        "android_client_info": {
+          "package_name": "com.example.watch2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBqq4erojnYYsevOOu3wyLOGKIpiN_3BA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

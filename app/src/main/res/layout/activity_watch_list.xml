@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#E3F2FD">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WATCHTRY"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp" />
+
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:padding="12dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:background="@android:color/white">
+
+        <Button
+            android:id="@+id/buttonPopular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="Popular"
+            android:background="?attr/selectableItemBackground" />
+
+        <Button
+            android:id="@+id/buttonNew"
+            android:layout_width="0dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New"
+            android:background="?attr/selectableItemBackground" />
+
+        <Button
+            android:id="@+id/buttonFavorites"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="♥"
+            android:background="?attr/selectableItemBackground" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewWatches"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="16dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

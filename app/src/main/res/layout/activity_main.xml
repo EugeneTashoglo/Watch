@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/buttonGoToRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Регистрация" />
+
+    <Button
+        android:id="@+id/buttonGoToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Вход" />
+</LinearLayout>

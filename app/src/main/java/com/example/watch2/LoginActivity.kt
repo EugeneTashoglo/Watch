@@ -26,6 +26,8 @@ class LoginActivity : AppCompatActivity() {
         val rememberMeCheckBox: CheckBox = findViewById(R.id.checkBoxRememberMe)
         val loginButton: Button = findViewById(R.id.buttonLogin)
 
+        checkSavedCredentials()
+
         loginButton.setOnClickListener {
             val email = emailField.text.toString().trim()
             val password = passwordField.text.toString().trim()
@@ -43,7 +45,14 @@ class LoginActivity : AppCompatActivity() {
             loginUser(email, password, rememberMeCheckBox.isChecked)
         }
     }
-
+    private fun checkSavedCredentials() {
+        val sharedPreferences = getSharedPreferences("user_credentials", MODE_PRIVATE)
+        val email = sharedPreferences.getString("email", null)
+        val password = sharedPreferences.getString("password", null)
+        if (!email.isNullOrEmpty() && !password.isNullOrEmpty()) {
+            loginUser(email, password, rememberMe = false)
+        }
+    }
     private fun loginUser(email: String, password: String, rememberMe: Boolean) {
         Log.d("LoginActivity", "Trying to log in with email: $email")
         auth.signInWithEmailAndPassword(email, password)
@@ -51,6 +60,9 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Вход успешен
                     Log.d("LoginActivity", "Login successful")
+                    if (rememberMe) {
+                        saveUserCredentials(email, password)
+                    }
                     val intent = Intent(this, WatchListActivity::class.java)
                     startActivity(intent)
                     finish()
@@ -64,6 +76,13 @@ class LoginActivity : AppCompatActivity() {
                 Log.e("LoginActivity", "signInWithEmail:failure", e)
                 handleAuthException(e)
             }
+    }
+    private fun saveUserCredentials(email: String, password: String) {
+        val sharedPreferences = getSharedPreferences("user_credentials", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("email", email)
+        editor.putString("password", password)
+        editor.apply()
     }
 
     private fun handleAuthException(exception: Exception?) {

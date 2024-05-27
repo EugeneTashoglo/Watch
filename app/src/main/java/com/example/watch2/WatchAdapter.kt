@@ -37,6 +37,7 @@ class WatchAdapter(private val watchList: List<Watch>) : RecyclerView.Adapter<Wa
             itemView.setOnClickListener {
                 val context = itemView.context
                 val intent = Intent(context, WatchDetailActivity::class.java).apply {
+                    putExtra("id", watch.id) // Передаем уникальный идентификатор
                     putExtra("name", watch.name)
                     putExtra("rating", watch.rating)
                     putExtra("price", watch.price)

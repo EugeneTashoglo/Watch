@@ -15,5 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Watch2"
 include(":app")
-include(":unityLibrary")
-project(":unityLibrary").projectDir = file("unityLibrary")

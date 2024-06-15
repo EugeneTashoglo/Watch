@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.watch2.R
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
-import com.google.firebase.auth.auth
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -28,6 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         val passwordField: EditText = findViewById(R.id.editTextPassword)
         val confirmPasswordField: EditText = findViewById(R.id.editTextConfirmPassword)
         val registerButton: Button = findViewById(R.id.buttonRegister)
+        val textViewAlreadyHaveAccount: TextView = findViewById(R.id.textViewAlreadyHaveAccount)
 
         registerButton.setOnClickListener {
             val name = nameField.text.toString().trim()
@@ -57,6 +57,11 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             registerUser(name, email, password)
+        }
+
+        textViewAlreadyHaveAccount.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
     }
 

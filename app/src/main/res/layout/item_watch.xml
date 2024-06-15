@@ -16,8 +16,11 @@
         android:id="@+id/textViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         android:paddingTop="8dp"
-        android:text="Watch Name" />
+        android:text="Watch Name"
+        android:gravity="center"
+        android:textColor="#1E3C5F" />
+
 </LinearLayout>

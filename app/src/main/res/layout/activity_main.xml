@@ -2,17 +2,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logobig"
+        android:layout_marginBottom="32dp" />
 
     <Button
         android:id="@+id/buttonGoToRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Регистрация" />
+        android:text="Регистрация"
+        android:backgroundTint="#3A48C4"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/buttonGoToLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Вход" />
+        android:text="Вход"
+        android:backgroundTint="#3A48C4"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -25,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
         val passwordField: EditText = findViewById(R.id.editTextLoginPassword)
         val rememberMeCheckBox: CheckBox = findViewById(R.id.checkBoxRememberMe)
         val loginButton: Button = findViewById(R.id.buttonLogin)
+        val textViewNoAccount: TextView = findViewById(R.id.textViewNoAccount)
 
         checkSavedCredentials()
 
@@ -44,7 +46,13 @@ class LoginActivity : AppCompatActivity() {
 
             loginUser(email, password, rememberMeCheckBox.isChecked)
         }
+
+        textViewNoAccount.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
+
     private fun checkSavedCredentials() {
         val sharedPreferences = getSharedPreferences("user_credentials", MODE_PRIVATE)
         val email = sharedPreferences.getString("email", null)
@@ -53,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
             loginUser(email, password, rememberMe = false)
         }
     }
+
     private fun loginUser(email: String, password: String, rememberMe: Boolean) {
         Log.d("LoginActivity", "Trying to log in with email: $email")
         auth.signInWithEmailAndPassword(email, password)
@@ -77,6 +86,7 @@ class LoginActivity : AppCompatActivity() {
                 handleAuthException(e)
             }
     }
+
     private fun saveUserCredentials(email: String, password: String) {
         val sharedPreferences = getSharedPreferences("user_credentials", MODE_PRIVATE)
         val editor = sharedPreferences.edit()

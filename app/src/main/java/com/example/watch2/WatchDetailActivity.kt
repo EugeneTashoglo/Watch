@@ -9,9 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.squareup.picasso.LruCache
 import com.squareup.picasso.Picasso
-
-
 
 class WatchDetailActivity : AppCompatActivity() {
 
@@ -57,9 +56,13 @@ class WatchDetailActivity : AppCompatActivity() {
         textViewPrice.text = "от $price₽"
         textViewDescription.text = description
 
+        // Настраиваем Picasso с кэшированием
+        val picasso = Picasso.Builder(this)
+            .memoryCache(LruCache(24000))
+            .build()
+
         // Загружаем изображение с использованием Picasso
-        Picasso.get()
-            .load(imageFrameName)
+        picasso.load(imageFrameName)
             .into(imageView)
 
         // Кнопка "назад"
@@ -80,20 +83,12 @@ class WatchDetailActivity : AppCompatActivity() {
         heartButton.setOnClickListener {
             isLiked = !isLiked
             if (isLiked) {
-                watchRef.setValue(true).addOnCompleteListener {
-                    // Сообщаем, что данные изменились
-                    setResult(RESULT_OK)
-                }
+                watchRef.setValue(true)
             } else {
-                watchRef.removeValue().addOnCompleteListener {
-                    // Сообщаем, что данные изменились
-                    setResult(RESULT_OK)
-                }
+                watchRef.removeValue()
             }
             updateHeartButton()
         }
-
-
     }
 
     private fun updateHeartButton() {

@@ -18,8 +18,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.util.Locale
 
-
-
 class WatchListActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
@@ -187,7 +185,8 @@ class WatchListActivity : AppCompatActivity() {
 
     private fun updateFilteredWatchList() {
         Log.d("WatchListActivity", "Filtered list size: ${filteredWatchList.size}")
-        Toast.makeText(this, "Filtered items: ${filteredWatchList.size}", Toast.LENGTH_SHORT).show()
+        // Убираем отображение количества отфильтрованных элементов
+        // Toast.makeText(this, "Filtered items: ${filteredWatchList.size}", Toast.LENGTH_SHORT).show()
         watchAdapter.notifyDataSetChanged()
     }
 }

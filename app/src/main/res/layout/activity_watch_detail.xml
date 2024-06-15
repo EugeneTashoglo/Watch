@@ -1,80 +1,121 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="#1E3C5F"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WATCHTRY"
+        android:textColor="#FFFFFF"
+        android:paddingTop="16dp"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:paddingBottom="16dp"  />
 
     <RelativeLayout
-        android:id="@+id/imageContainer"
+        android:id="@+id/outerContainer"
+        android:background="@drawable/rounded_top"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="80dp"
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageViewWatch"
+        <RelativeLayout
+            android:id="@+id/imageContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true">
 
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/arrowback"
+            <ImageView
+                android:id="@+id/imageViewWatch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/arrowback"
+                android:layout_alignParentStart="true"
+                android:layout_margin="16dp"
+                android:layout_alignParentTop="true"/>
+
+            <ImageView
+                android:id="@+id/heartButton"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@drawable/heart"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="16dp"
+                android:layout_alignParentTop="true"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1E3C5F"
+
+            android:layout_below="@id/imageContainer"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewName"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+
             android:layout_alignParentStart="true"
-            android:layout_margin="16dp"
-            android:layout_alignParentTop="true"/>
+            android:drawableStart="@drawable/rate_icon"
+            android:drawablePadding="8dp" />
 
-        <ImageView
-            android:id="@+id/heartButton"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/heart"
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewName"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="36dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+
             android:layout_alignParentEnd="true"
-            android:layout_margin="16dp"
-            android:layout_alignParentTop="true"/>
+            android:drawableStart="@drawable/money_icon"
+            android:drawablePadding="8dp" />
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewRating"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+             />
+
+        <Button
+            android:id="@+id/buttonTry"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Примерить"
+            android:backgroundTint="#3A48C4"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/textViewDescription"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="100dp" />
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_below="@id/imageContainer"
-        android:layout_marginTop="16dp" />
-
-    <TextView
-        android:id="@+id/textViewRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewName"
-        android:layout_marginTop="8dp"
-        android:textSize="16sp"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/textViewPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewName"
-        android:layout_marginTop="8dp"
-        android:textSize="16sp"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:id="@+id/textViewDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewRating"
-        android:layout_marginTop="16dp"
-        android:textSize="14sp" />
-
-    <Button
-        android:id="@+id/buttonTry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Примерить"
-        android:layout_below="@id/textViewDescription"
-        android:layout_marginTop="16dp" />
 </RelativeLayout>
